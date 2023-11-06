@@ -1,10 +1,10 @@
 {
-    "name": "My plugin",
+    "name": "Cheshire Football Data",
     "version": "0.0.1",
-    "description": "Description of my_plugin.",
-    "author_name": "Me",
-    "author_url": "https://mywebsite.me",
-    "plugin_url": "https://github.com/my_name/my_plugin",
-    "tags": "cat, template, example",
-    "thumb": "https://raw.githubusercontent.com/my_repo_path/my_plugin.png"
+    "description": "This plugin allows the cheshire cat to retrieve up to date football data.",
+    "author_name": "Mario Massimetti",
+    "author_url": "https://www.linkedin.com/in/mamassimetti/",
+    "plugin_url": "https://github.com/mmassime/cheshire_football_data",
+    "tags": "cat, football, scraping",
+    "thumb": "https://raw.githubusercontent.com/mmassime/cheshire_football_data/main/cheshire_football_data.png"
 }
