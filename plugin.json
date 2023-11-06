@@ -1,7 +1,7 @@
 {
     "name": "Cheshire Football Data",
     "version": "0.0.1",
-    "description": "This plugin allows the cheshire cat to retrieve up to date football data.",
+    "description": "This plugin allows the cheshire cat to retrieve up-to-date football data.",
     "author_name": "Mario Massimetti",
     "author_url": "https://www.linkedin.com/in/mamassimetti/",
     "plugin_url": "https://github.com/mmassime/cheshire-football-data",
