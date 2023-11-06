@@ -3,13 +3,6 @@ from pydantic import BaseModel
 from datetime import datetime, date
 from footballscraper import Leagues
 
-class MySettings(BaseModel):
-    required_int: int
-    optional_int: int = 69
-    required_str: str
-    optional_str: str = "meow"
-    required_date: date
-    optional_date: date = 1679616000
 
 def docstring_parameter(*sub):
     def dec(obj):
@@ -23,10 +16,6 @@ leagues = {'Serie A' : Leagues.SerieA(),
            'La Liga': Leagues.LaLiga(),
            'Ligue 1': Leagues.Ligue1()}
 
-@plugin
-def settings_schema():   
-    return MySettings.schema()
-
 @tool
 def serie_a(tool_input, cat):
     """Replies to questions about current state of the italian football league, Serie A. 
@@ -37,7 +26,7 @@ def serie_a(tool_input, cat):
     return res
 
 @tool
-@docstring_parameter(str(leagues['Serie A'].get_teams().items()))
+@docstring_parameter(str(list(leagues['Serie A'].get_teams().keys())))
 def team_serie_a(tool_input, cat):
     """Replies to questions about a team that plays in the italian football league, Serie A. 
     Input is a string with the name of the team from this list {0}"""
@@ -61,7 +50,7 @@ def premier_league(tool_input, cat):
     return res
 
 @tool
-@docstring_parameter(str(leagues['Premier League'].get_teams().items()))
+@docstring_parameter(str(list(leagues['Premier League'].get_teams().keys())))
 def team_premier_league(tool_input, cat):
     """Replies to questions about a team that plays in the british football league, Premier League. 
     Input is a string with the name of the team from this list {0}"""
@@ -85,7 +74,7 @@ def bundesliga(tool_input, cat):
     return res
 
 @tool
-@docstring_parameter(str(leagues['Bundesliga'].get_teams().items()))
+@docstring_parameter(str(list(leagues['Bundesliga'].get_teams().keys())))
 def team_bundesliga(tool_input, cat):
     """Replies to questions about a team that plays in the german football league, Bundesliga. 
     Input is a string with the name of the team from this list {0}"""
@@ -109,7 +98,7 @@ def la_liga(tool_input, cat):
     return res
 
 @tool
-@docstring_parameter(str(leagues['La Liga'].get_teams().items()))
+@docstring_parameter(str(list(leagues['La Liga'].get_teams().keys())))
 def team_la_liga(tool_input, cat):
     """Replies to questions about a team that plays in the spanish football league, La Liga. 
     Input is a string with the name of the team from this list {0}"""
@@ -133,7 +122,7 @@ def ligue_1(tool_input, cat):
     return res
 
 @tool
-@docstring_parameter(str(leagues['Ligue 1'].get_teams().items()))
+@docstring_parameter(str(list(leagues['Ligue 1'].get_teams().keys())))
 def team_ligue_1(tool_input, cat):
     """Replies to questions about a team that plays in the french football league, Ligue 1. 
     Input is a string with the name of the team from this list {0}"""
