@@ -1,1 +1,1 @@
-footballscraper >= 0.0
+footballscraper
